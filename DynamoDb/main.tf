@@ -15,25 +15,8 @@ provider "aws" {
 terraform {
   backend "s3" {
     bucket = "terraforms3bucket007"
-    key    = "taint-command/terraform.tfstate"
+    key    = "StateLock/DynamodDb-StateLock/terraform.tfstate"
     region = "ap-south-1"
   }
 }
 
-#server-1
-resource "aws_instance" "taint-server-1" {
-  tags = {
-    Name = "taint-server-1"
-  }
-  ami                         = var.ami
-  instance_type               = "t2.micro"
-  associate_public_ip_address = true
-}
-resource "aws_instance" "taint-server-2" {
-  tags = {
-    Name = "taint-server-2"
-  }
-  ami                         = var.ami
-  instance_type               = "t2.micro"
-  associate_public_ip_address = true
-}
