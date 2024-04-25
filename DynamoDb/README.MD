@@ -3,9 +3,22 @@
 
 ## Description
 
+
+
 Learn how to manage Terraform state securely with AWS services. This tutorial guides you through setting up DynamoDB for state locking and S3 for state storage, ensuring consistency and preventing conflicts in your infrastructure deployments. Follow along as we configure Terraform to use DynamoDB and S3 as backends, adhering to AWS Free Tier limits for cost-effective solutions. By the end, you'll have a solid understanding of best practices for managing Terraform state in collaborative environments.
 
+
+### Explanation of State Locking:
+
+State locking is a mechanism used by Terraform to prevent concurrent modifications to the infrastructure state file by multiple users or processes. It ensures that only one user or process can modify the state file at a time, reducing the risk of conflicts and inconsistencies.
+
+When Terraform runs operations that modify infrastructure, it acquires a lock on the state file to prevent other instances of Terraform from modifying it simultaneously. This lock is essential for maintaining the integrity of the state file, especially in collaborative environments where multiple users may be working on the same infrastructure concurrently.
+
+By using DynamoDB for state locking, Terraform ensures that only one instance can acquire the lock at a time, preventing conflicts and ensuring consistency in infrastructure deployments.
+
+
 ## Outline
+
 
 1. **Introduction to Terraform State Management**
    - Overview of Terraform state management and its importance in infrastructure as code (IaC) workflows.
@@ -55,17 +68,12 @@ Learn how to manage Terraform state securely with AWS services. This tutorial gu
 
 ## Getting Started
 
-To get started with this tutorial, follow the steps outlined in each section of the tutorial. Make sure you have access to an AWS account and the necessary permissions to create resources.
+To get started with this tutorial, follow the steps outlined in each section of the tutorial.
+Make sure you have access to an AWS account and the necessary permissions to create resources.
 
 ## Contributing
 
-Contributions are welcome! If you find any issues or have suggestions for improvements, feel free to open an issue or create a pull request.
+Contributions are welcome! If you find any issues or have suggestions for improvements, 
+feel free to open an issue or create a pull request.
 ```
 
-### Explanation of State Locking:
-
-State locking is a mechanism used by Terraform to prevent concurrent modifications to the infrastructure state file by multiple users or processes. It ensures that only one user or process can modify the state file at a time, reducing the risk of conflicts and inconsistencies.
-
-When Terraform runs operations that modify infrastructure, it acquires a lock on the state file to prevent other instances of Terraform from modifying it simultaneously. This lock is essential for maintaining the integrity of the state file, especially in collaborative environments where multiple users may be working on the same infrastructure concurrently.
-
-By using DynamoDB for state locking, Terraform ensures that only one instance can acquire the lock at a time, preventing conflicts and ensuring consistency in infrastructure deployments.
