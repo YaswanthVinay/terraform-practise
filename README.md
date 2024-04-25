@@ -2,6 +2,8 @@
 
 ### Managing Infrastructure with Terraform
 
+### Terraform TAINT-COMMAND
+
 #### Overview
 
 This repository demonstrates how to manage infrastructure using Terraform, a popular Infrastructure as Code (IaC) tool. Terraform allows you to define and provision infrastructure resources in a declarative manner, enabling easier management, versioning, and collaboration.
