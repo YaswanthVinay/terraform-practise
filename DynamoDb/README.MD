@@ -1,4 +1,4 @@
-Sure, here's a README file for your Git repository explaining the concepts of S3 backend and state locking using DynamoDB:
+README file for explaining the concepts of S3 backend and state locking using DynamoDB:
 
 ---
 
