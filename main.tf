@@ -20,8 +20,8 @@ terraform {
   }
 }
 
-
-resource "aws_instance" "taint-server" {
+#server-1
+resource "aws_instance" "taint-server-1" {
   tags = {
     Name = "taint-server-1"
   }
