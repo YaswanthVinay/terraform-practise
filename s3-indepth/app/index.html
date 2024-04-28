@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shopping Cart</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f8f8f8;
+    }
+
+    header {
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 10px 0;
+        margin-bottom: 20px;
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .product {
+        background-color: white;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+
+    .product img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 5px;
+    }
+
+    .product h2 {
+        margin-top: 0;
+    }
+
+    .product p {
+        margin-bottom: 0;
+    }
+
+    footer {
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 10px 0;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+</style>
+</head>
+<body>
+    <header>
+        <h1>My Shopping Cart</h1>
+    </header>
+    <div class="container">
+        <div class="product">
+            <img src="https://via.placeholder.com/200" alt="Product Image">
+            <h2>Product Name</h2>
+            <p>Description of the product. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p>Price: $19.99</p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="https://via.placeholder.com/200" alt="Product Image">
+            <h2>Another Product</h2>
+            <p>Description of another product. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p>Price: $29.99</p>
+            <button>Add to Cart</button>
+        </div>
+    </div>
+    <footer>
+        &copy; 2024 My Shopping Cart
+    </footer>
+</body>
+</html>
