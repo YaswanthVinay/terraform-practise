@@ -162,8 +162,9 @@ resource "aws_instance" "server" {
   subnet_id              = aws_subnet.web-sn[count.index].id
   vpc_security_group_ids = [aws_security_group.web-sg.id]
   #  note: 
-  #  here instance profile will be created automatically when using AWS Console,but when using terraform or AWS SDK/CLI you have to explicitly add the instance profile to the iam role.
-  # IAM INSTANCE PROFILE is nothing but a container which iam role will be stored.
+  #  here instance profile will be created automatically when using AWS Console,
+  #  but when using terraform or AWS SDK/CLI you have to explicitly add the instance profile to the iam role.
+  #  IAM INSTANCE PROFILE is nothing but a container which iam role will be stored.
   iam_instance_profile        = var.instance_profile_name
   associate_public_ip_address = true
   tags = {
