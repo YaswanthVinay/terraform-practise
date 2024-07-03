@@ -7,7 +7,8 @@ Workspaces in Terraform allow you to manage multiple states within the same conf
 - **Environment Management:** You can isolate different environments (e.g., dev, test, prod) to avoid conflicts.
 - **Simplified Configurations:** Maintain a single configuration while managing different states.
 - **Ease of Use:** Switch between environments using simple commands (`terraform workspace select`).
-- https://cloudchamp.notion.site/Terraform-Scenario-based-Interview-Questions-bce29cb359b243b4a1ab3191418bfaab
+###   https://cloudchamp.notion.site/Terraform-Scenario-based-Interview-Questions-bce29cb359b243b4a1ab3191418bfaab
+
 **Example Usage:**
 ```sh
 # Create a new workspace
