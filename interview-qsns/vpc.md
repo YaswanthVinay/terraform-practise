@@ -180,11 +180,4 @@ In AWS, security groups and network ACLs serve different purposes and are applie
   - You might have a network ACL that allows HTTP and HTTPS traffic into the subnet but denies all other traffic.
   - This ACL would apply to all instances within that subnet.
 
-## Practical Use
-
-1. **Assigning Security Groups:**
-   - When launching an instance, you assign a security group to it. You can also modify the security group assignments later.
-
-   ```sh
- 
 
