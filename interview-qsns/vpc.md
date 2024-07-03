@@ -139,3 +139,52 @@ By leveraging AWS Transit Gateway, you achieve transitive routing between VPCs, 
 * **Log Storage:** Use S3 for cost-effective long-term storage of flow logs. Implement lifecycle policies to archive or delete logs as needed.
 * **Integration with SIEM:** Integrate flow logs with Security Information and Event Management (SIEM) systems for enhanced analysis and correlation with other security data.
 * **Analyze Patterns:** Regularly analyze flow logs to identify unusual traffic
+
+
+
+
+# Security Groups vs. Network ACLs in AWS
+
+In AWS, security groups and network ACLs serve different purposes and are applied at different levels:
+
+## Security Groups
+
+- **Instance Level:**
+  - Security groups are attached to instances (ENIs, to be precise). They act as virtual firewalls for your instance to control inbound and outbound traffic.
+  - You can assign one or more security groups to an EC2 instance. When you launch an instance, you can specify the security group(s) you want it to use.
+  - Security groups evaluate all rules before deciding whether to allow traffic, meaning they're stateful: if you allow inbound traffic, the response is automatically allowed.
+
+## Network ACLs (Access Control Lists)
+
+- **Subnet Level:**
+  - Network ACLs are applied at the subnet level and provide an additional layer of security for your VPC. They control traffic to and from subnets.
+  - Unlike security groups, network ACLs are stateless: each request and response is evaluated based on the rules.
+
+## Comparison
+
+| Feature                  | Security Groups                          | Network ACLs                          |
+|--------------------------|------------------------------------------|---------------------------------------|
+| Applied to               | Instances (ENIs)                         | Subnets                               |
+| Statefulness             | Stateful                                 | Stateless                             |
+| Rule Evaluation          | All rules are evaluated                  | Rules evaluated in numerical order    |
+| Default Behavior         | Deny all inbound, allow all outbound     | Allow all inbound and outbound        |
+| Rule Changes Propagation | Immediate                                | Immediate                             |
+
+## Example Scenario
+
+- **Security Group:** 
+  - You might create a security group that allows HTTP (port 80) and HTTPS (port 443) traffic from anywhere to your web server instance.
+  - Another security group might only allow SSH (port 22) access from your IP address.
+
+- **Network ACL:** 
+  - You might have a network ACL that allows HTTP and HTTPS traffic into the subnet but denies all other traffic.
+  - This ACL would apply to all instances within that subnet.
+
+## Practical Use
+
+1. **Assigning Security Groups:**
+   - When launching an instance, you assign a security group to it. You can also modify the security group assignments later.
+
+   ```sh
+ 
+
