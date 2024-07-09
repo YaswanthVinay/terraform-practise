@@ -251,3 +251,31 @@ When upgrading Terraform versions:
 - Document any changes and provide training to team members as needed.
 
 Ensure you meet the minimum requirements, update your CI/CD pipelines, and backup your state files before starting the migration process.
+1. Scenario: Managing State File Conflicts ✨
+Question: You are part of a team, and multiple people are working on the same Terraform project. How do you manage state file conflicts to ensure consistency?
+
+Answer: To manage state file conflicts, use a remote backend with state locking enabled. Amazon S3 with DynamoDB for state locking is a common setup. This configuration ensures that only one user can modify the state file at a time, preventing conflicts and maintaining consistency.
+
+ 2. Scenario: Migrating State Files ✨
+Question:** Your organization has decided to migrate Terraform state files from local storage to an S3 backend. What steps would you take to perform this migration?
+
+Answer:
+1. Create an S3 bucket and enable versioning.
+2. Configure the S3 backend in your Terraform configuration file.
+3. Run `terraform init` to initialize the new backend and migrate the existing state.
+4. Confirm the migration and verify that the state file is correctly stored in S3.
+
+ 3. Scenario: Handling Sensitive Data ✨
+Question:How do you manage sensitive data such as passwords and API keys in Terraform configurations?
+
+Answer: Use Terraform’s `sensitive` attribute to mark variables as sensitive. Additionally, store sensitive data in environment variables or use a secrets management service like AWS Secrets Manager or HashiCorp Vault. Ensure that sensitive outputs are not logged or displayed in the console.
+
+ 4. Scenario: Resource Dependencies ✨
+Question: Explain how you would handle dependencies between resources in a Terraform configuration.
+
+Answer: Terraform implicitly manages dependencies based on resource references. For explicit dependencies, you can use the `depends_on` argument. This ensures that Terraform builds resources in the correct order, respecting dependencies.
+
+5. Scenario: Disaster Recovery ✨
+Question:** Your Terraform-managed infrastructure has suffered a catastrophic failure. How do you ensure a quick recovery using Terraform?
+
+Answer: Regularly back up your Terraform state files and enable versioning in your S3 backend. In case of failure, you can quickly restore the state file from a backup or previous version. Additionally, maintain a version-controlled Terraform codebase to ensure you can redeploy infrastructure consistently.
